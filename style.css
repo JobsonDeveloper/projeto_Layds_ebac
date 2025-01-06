@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --colorOne: #2b9eb3;
+    --colorTwo: #85cc9c;
+    --colorThree: #bcd9a0;
+    --colorFour: #edf79e;
+    --colorFive: #fafad7;
+
+    --fontFamilyOne: "Poppins", serif;
+    --fontFamilyTow: "DM Serif Text", serif;
+}
+
+h1 {
+    font-family: var(--fontFamilyOne);
+}
+
+p,
+input,
+textarea,
+button {
+    font-family: var(--fontFamilyTow);
+}
+
+header {
+    display: flex;
+    background-color: var(--colorOne);
+    padding: 3px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_logo {
+    font-weight: 600;
+    color: var(--colorFive);
+}
+
+.header_nav {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    gap: 10px;
+}
+
+.header_nav a {
+    text-decoration: none;
+    color: var(--colorFive);
+    font-family: var(--fontFamilyTow);
+    transition: .5s;
+}
+
+.header_nav a:hover {
+    color: var(--colorFour);
+    text-decoration: underline;
+}
+
+main {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.background_pratos img {
+    width: 100%;
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 3px;
+}
+
+#about h3 {
+    font-size: 1.5rem;
+    color: var(--colorOne);
+}
+
+#about h4 {
+    font-size: 1.2rem;
+    color: var(--colorOne);
+}
+
+#about p, #contact p {
+    color: #292929;
+}
+
+#about h3 span {
+    color: gold;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact h4 {
+    font-size: 1.3rem;
+    color: var(--colorOne);
+}
+
+#contact .social_media img {
+    height: 35px;
+    cursor: pointer;
+}
+
+#contact .social_media {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#contact {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#contact h3 {
+    font-size: 1.5rem;
+    color: var(--colorOne);
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 320px;
+}
+
+#contact input,
+textarea {
+    font-size: 1rem;
+    padding: 2px 3px;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid var(--colorOne);
+}
+
+#contact textarea {
+    resize: none;
+}
+
+#contact button {
+    background-color: var(--colorTwo);
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.3rem;
+    color: #1c933e;
+    cursor: pointer;
+}
+
+footer {
+    background-color: var(--colorOne);
+    color: var(--colorFive);
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+}
+
+footer p {
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    header {
+        padding: 3px 30px;
+    }
+
+    main {
+        display: grid;
+        grid-template-areas:
+            "img about"
+            "contact contact";
+        /* justify-content: center; */
+        margin-top: 20px;
+        padding: 0px 30px;
+    }
+
+    .background_pratos {
+        grid-area: img;
+    }
+
+    .background_pratos img {
+        /* width: 600px; */
+        border-radius: 2px;
+    }
+
+    #about {
+        grid-area: about;
+        justify-content: space-evenly;
+        /* width: 500px; */
+    }
+
+    #contact {
+        margin-top: 50px;
+        grid-area: contact;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
